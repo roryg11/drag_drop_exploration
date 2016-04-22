@@ -141,6 +141,8 @@ function enoughOverlap(intOne, intTwo){
     bl: [x,y]
   }
 
+  var sq2Area = Math.pow(tr.x - tl.x, 2);
+
   // calculate overlap assuming you have intersection points
   var oppCornerOne = {x: intOne.x, y: intTwo.y};
   var oppCornerTwo = {x: intTwo.x, y: intOne.y};
@@ -150,9 +152,9 @@ function enoughOverlap(intOne, intTwo){
   // that isn't zero
   // you could extrapolate and say it's
   var length = intOne.x - oppCornerTwo.x
-  var area = length * length;
+  var area = Math.pow(length, 2);
 
-  if(area === .5(//area of sq1 or sq2)){
+  if(area === .5(sq2Area)){
     //swap their contents
   }
 }
